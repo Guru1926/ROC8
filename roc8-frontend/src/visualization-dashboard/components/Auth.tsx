@@ -24,6 +24,10 @@ if(result?.token){
     authContext?.userLogin(result?.token)
     navigate('/dashboard');
 }
+if(!isLogin){
+    setIsLogin(true)
+}
+      
 };
 
   return (

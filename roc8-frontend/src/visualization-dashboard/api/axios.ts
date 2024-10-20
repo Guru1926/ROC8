@@ -2,11 +2,10 @@ const BASE_URL= 'https://roc8-backend.vercel.app'
 import axios from "axios";
 
 export const signup = async (email: string, password: string, name: string) => {
-  const signupResponse = await axios.post(`${BASE_URL}/user/signup`, {
+  const signupResponse = await axios.post(`${BASE_URL}/user/signup`, { email, password, name },{
     headers: {
       "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password, name }),
+    }
   });
   return signupResponse.data;
 };
